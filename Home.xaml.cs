@@ -24,10 +24,10 @@ namespace talktalk
     /// </summary>
     public partial class Home : Page
     {
-        static readonly HttpClient API = new HttpClient();
+        //static readonly HttpClient API = new HttpClient();
         byte[] data = new byte[256];
-        public static TcpClient clients = new TcpClient("10.10.21.118", 5005); //연결객체
-        /*        public static TcpClient clients = new TcpClient("10.10.21.111", 8001); //연결객체*/
+        public static TcpClient clients = new TcpClient("10.10.21.112", 5100); //연결객체
+        public static TcpClient pyclients = new TcpClient("localhost", 12345); //연결객체
         static NetworkStream stream = clients.GetStream();
         public Home()
         {
@@ -35,15 +35,15 @@ namespace talktalk
         }
         private void btn_CC_Click(object sender, RoutedEventArgs e)
         {
-            data = Encoding.UTF8.GetBytes("고객");
-            stream.Write(data, 0, data.Length);
+            //data = Encoding.UTF8.GetBytes("고객");
+            //stream.Write(data, 0, data.Length);
             NavigationService.Navigate(new Uri("/Cs_Login.xaml", UriKind.Relative));
         }
 
         private void btn_CS_Click(object sender, RoutedEventArgs e)
         {
-            data = Encoding.UTF8.GetBytes("직원");
-            stream.Write(data, 0, data.Length);
+            //data = Encoding.UTF8.GetBytes("직원");
+            //stream.Write(data, 0, data.Length);
             NavigationService.Navigate(new Uri("/Login.xaml", UriKind.Relative));
         }
     }

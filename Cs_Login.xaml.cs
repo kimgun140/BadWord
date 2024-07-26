@@ -22,9 +22,10 @@ namespace talktalk
     /// <summary>
     /// Cs_Login.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class Cs_Login : Window
+    public partial class Cs_Login : Page
     {
-
+        public string User_ID;
+        jprotocol jprotocol = new jprotocol();
         NetworkStream stream = Home.clients.GetStream();
         List<string> str_list_jobject = new List<string>();
         List<string> login_list = new List<string>();
@@ -45,37 +46,31 @@ namespace talktalk
         }
         private void btn_login_Click(object sender, RoutedEventArgs e)
         {
+            string id = txt_ID.Text;
+            string pw = pw_PW.Password;
+            User_ID = txt_ID.Text;
 
-            login_list.Clear();
-            login_list.Add("로그인요청");
-            login_list.Add(txt_ID.Text);
-            login_list.Add(pw_PW.Password);
+            int response = jprotocol.Login(id, pw);
 
-            foreach (string login_index in login_list)
-            {
-                data = Encoding.UTF8.GetBytes(login_index);
-                stream.Write(data, 0, data.Length);//전송할 데 이터의 바이트 배열, 전송을 시작할 배열의 인덱스, 전송할 데이터의 길이.
-                Thread.Sleep(100);
-            }
 
-            byte[] recv_data = new byte[300];
-            int bytes = stream.Read(recv_data, 0, recv_data.Length);
-            string responses = Encoding.UTF8.GetString(recv_data, 0, bytes);
-            Console.WriteLine("Received: " + responses);
-            if (responses == "로그인 되었습니다")
+            if (response == 1) // 로그인 성공
             {
                 stream.Flush();
-                //NavigationService.Navigate(new Uri("/Main.xaml", UriKind.Relative));
+                //Word_Collector word_Collector = new Word_Collector(User_ID);
+                NavigationService.Navigate(new Uri("word_Collector.xaml", UriKind.Relative));
+
+                //NavigationService.Navigate(word_Collector);
+                //User_ID = id;
             }
-            else if (responses == "일치하는 정보가 없습니다")
+            else if (response == 0)// 실패 
             {
-                MessageBox.Show(responses);
+                MessageBox.Show("회원정보가 일치하지 않습니다.");
             }
         }
 
         private void btn_join_Click(object sender, RoutedEventArgs e)
         {
-            //NavigationService.Navigate(new Uri("/Join.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("User_Signup.xaml", UriKind.Relative));
         }
     }
 

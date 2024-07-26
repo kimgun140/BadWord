@@ -19,28 +19,34 @@ namespace talktalk
     /// <summary>
     /// Word_Collector.xaml에 대한 상호 작용 논리
     /// </summary>
+    /// 
     public partial class Word_Collector : Page
     {
-        NetworkStream stream = Home.clients.GetStream(); //데이터 전송에 사용된 스트림
+        jprotocol jprotocol = new jprotocol();
+        //NetworkStream stream = Home.clients.GetStream(); //데이터 전송에 사용된 스트림
+        string User_id123 = "";
 
+        //public Word_Collector( string user_id)
         public Word_Collector()
+
         {
             InitializeComponent();
+            //this.user_id = user_id;
+            //this.User_id123 = user_id;
+            //txtbox_chat.Text = user_id;
+
+
         }
+
         private void txtbox_send_KeyUp(object sender, KeyEventArgs e)
         {
+
             if (e.Key == Key.Enter)
             {
-                string send_message = "[고객] : " + txtbox_send.Text;
-                if (!string.IsNullOrEmpty(send_message))
-                {
-                    byte[] data = null;
-                    data = Encoding.UTF8.GetBytes(send_message);
-                    stream.Write(data, 0, data.Length);
-                    /*    txtbox_chat.Text += send_message;*/
-                    txtbox_send.Clear();
-                    txtbox_chat.ScrollToEnd();
-                }
+                //txtbox_chat.Text +=  jprotocol.nlpmachhine(txtbox_send.Text, this.User_id123);
+                txtbox_chat.Text += jprotocol.nlpmachhine(txtbox_send.Text);
+
+
             }
         }
     }

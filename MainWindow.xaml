@@ -8,7 +8,9 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <!--<Frame Source="Home.xaml"/>-->
-        <Frame Source="BadWord_List.xaml"/>
+        <Frame Source="Word_Collector.xaml"/>
+
+        <!--<Frame Source="BadWord_List.xaml"/>-->
 
     </Grid>
 </Window>
