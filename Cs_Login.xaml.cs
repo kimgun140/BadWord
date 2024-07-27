@@ -57,7 +57,7 @@ namespace talktalk
             {
                 stream.Flush();
                 //Word_Collector word_Collector = new Word_Collector(User_ID);
-                NavigationService.Navigate(new Uri("word_Collector.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri("Word_Collector.xaml", UriKind.Relative));
 
                 //NavigationService.Navigate(word_Collector);
                 //User_ID = id;

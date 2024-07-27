@@ -31,9 +31,7 @@ namespace talktalk
 
         {
             InitializeComponent();
-            //this.user_id = user_id;
-            //this.User_id123 = user_id;
-            //txtbox_chat.Text = user_id;
+
 
 
         }
@@ -44,7 +42,8 @@ namespace talktalk
             if (e.Key == Key.Enter)
             {
                 //txtbox_chat.Text +=  jprotocol.nlpmachhine(txtbox_send.Text, this.User_id123);
-                txtbox_chat.Text += jprotocol.nlpmachhine(txtbox_send.Text);
+                jprotocol.Word_Collector(txtbox_send.Text);
+                txtbox_chat.Text += txtbox_send.Text +" : " + jprotocol.nlpmachhine(txtbox_send.Text);
 
 
             }

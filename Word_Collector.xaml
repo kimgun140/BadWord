@@ -9,7 +9,7 @@
       Title="Word_Collector">
 
     <Grid>
-        <TextBox x:Name="txtbox_chat" Background="AliceBlue" Margin="0,30,0,200"></TextBox>
-        <TextBox x:Name="txtbox_send" TextWrapping="Wrap" Text="씨발" Margin="219,335,198,85" KeyUp="txtbox_send_KeyUp"/>
+        <TextBox x:Name="txtbox_chat" Background="AliceBlue" Margin="0,30,0,200" Width="800" Height="220" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
+        <TextBox x:Name="txtbox_send" TextWrapping="Wrap" Text="" Margin="219,335,198,85" KeyUp="txtbox_send_KeyUp" Width="380" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top"/>
     </Grid>
 </Page>

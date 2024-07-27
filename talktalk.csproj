@@ -58,12 +58,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BadWord_List.xaml.cs">
-      <DependentUpon>BadWord_List.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Chatting.xaml.cs">
-      <DependentUpon>Chatting.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
@@ -74,23 +68,11 @@
     <Compile Include="Word_Collector.xaml.cs">
       <DependentUpon>Word_Collector.xaml</DependentUpon>
     </Compile>
-    <Page Include="BadWord_List.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Chatting.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Cs_Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Home.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -104,9 +86,6 @@
     </Compile>
     <Compile Include="Cs_Login.xaml.cs">
       <DependentUpon>Cs_Login.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

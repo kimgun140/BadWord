@@ -9,8 +9,8 @@
       Title="Home">
 
     <Grid>
-        <Button x:Name="btn_CC" Content="고객용" HorizontalAlignment="Left" Height="192" Margin="139,0,0,0" VerticalAlignment="Center" Width="192" FontSize="24" Click="btn_CC_Click" Background="#FF80C0E2" BorderBrush="{x:Null}" Foreground="White"/>
-        <Button x:Name="btn_CS" Content="직원용" HorizontalAlignment="Left" Height="192" Margin="457,0,0,0" VerticalAlignment="Center" Width="192" FontSize="24" Background="#FF80C0E2" BorderBrush="{x:Null}" Foreground="White" Click="btn_CS_Click"/>
+        <Button x:Name="btn_CC" Content="로그인" HorizontalAlignment="Center" Height="192" VerticalAlignment="Center" Width="192" FontSize="24" Click="btn_CC_Click" Background="#FF80C0E2" BorderBrush="{x:Null}" Foreground="White"/>
+        <!--<Button x:Name="btn_CS" Content="직원용" HorizontalAlignment="Left" Height="192" Margin="457,0,0,0" VerticalAlignment="Center" Width="192" FontSize="24" Background="#FF80C0E2" BorderBrush="{x:Null}" Foreground="White" Click="btn_CS_Click"/>-->
 
     </Grid>
 </Page>
