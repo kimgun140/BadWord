@@ -100,35 +100,32 @@ namespace talktalk
 
             return 1;
         }
-        public static string nlpmachhine(string sentencedata, string User_id)
-        {
-            //TcpClient pyclients = new TcpClient("localhost", 12345); //연결객체
+        //public static string nlpmachhine(string sentencedata, string User_id)
+        //{
+        //    //TcpClient pyclients = new TcpClient("localhost", 12345); //연결객체
 
-            var data = new
-            {
-                protocol = "단어수집",
-                id = User_id,
-                data_collect = sentencedata
+        //    var data = new
+        //    {
+        //        protocol = "단어수집",
+        //        id = User_id,
+        //        data_collect = sentencedata
 
-            };
-            string jsonData = JsonConvert.SerializeObject(data);
-            byte[] buffer = Encoding.UTF8.GetBytes(jsonData);
-            NetworkStream pystream = Home.pyclients.GetStream();
-            pystream.Write(buffer, 0, buffer.Length);//슈웅
+        //    };
+        //    string jsonData = JsonConvert.SerializeObject(data);
+        //    byte[] buffer = Encoding.UTF8.GetBytes(jsonData);
+        //    NetworkStream pystream = Home.pyclients.GetStream();
+        //    pystream.Write(buffer, 0, buffer.Length);//슈웅
 
+        //    //받기 
+        //    byte[] recv_data = new byte[2000];
+        //    int databyte = pystream.Read(recv_data, 0, recv_data.Length);
+        //    string readdata = Encoding.UTF8.GetString(recv_data, 0, databyte);
+        //    //var receivedData = JsonConvert.serializeObject<string>(readdata);
+        //    var receivedData = JObject.Parse(readdata);
+        //    return receivedData["data_collect"].ToString();
+        //    //receivedData[""];
 
-
-
-            //받기 
-            byte[] recv_data = new byte[2000];
-            int databyte = pystream.Read(recv_data, 0, recv_data.Length);
-            string readdata = Encoding.UTF8.GetString(recv_data, 0, databyte);
-            //var receivedData = JsonConvert.serializeObject<string>(readdata);
-            var receivedData = JObject.Parse(readdata);
-            return receivedData["data_collect"].ToString();
-            //receivedData[""];
-
-        }
+        //}
         public static string nlpmachhine(string sentencedata)
         {
             //TcpClient pyclients = new TcpClient("localhost", 12345); //연결객체
@@ -144,9 +141,6 @@ namespace talktalk
             byte[] buffer = Encoding.UTF8.GetBytes(jsonData);
             NetworkStream pystream = Home.pyclients.GetStream();
             pystream.Write(buffer, 0, buffer.Length);//슈웅
-
-
-
 
             //받기 
             byte[] recv_data = new byte[2000];
